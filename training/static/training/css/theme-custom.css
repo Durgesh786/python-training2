@@ -1,0 +1,56 @@
+/* Add here all your CSS customizations */
+
+.required_fields{
+            color:#B94A48;
+        }
+ .img_status{
+    clear: both;
+    display: block;
+    width: 30%;
+    padding: 6px;
+ }
+.loader_anim {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background: url(../images/Preloader_3.gif) center no-repeat #00000060;
+}
+
+.page-header .right-wrapper.pull-right{
+    margin-right:50px
+}
+
+.panel-actions a {
+    width: inherit;
+    height: inherit;
+}
+
+body .btn-primary:hover {
+        color: white;
+}
+
+.errorlist li {
+    color: #B94A48;
+}
+
+ul.errorlist{
+    list-style: none;
+}
+
+.dataTables_wrapper>.dataTables_filter{
+     width: 50%;
+        float: right;
+}
+
+.dataTables_wrapper>.dataTables_info{
+     width: 50%;
+    display: inline-block;
+}
+
+.datepicker.dropdown-menu{
+        z-index: 9999 !important;
+}

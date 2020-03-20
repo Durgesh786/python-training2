@@ -1,0 +1,116 @@
+{% extends "training/base.html" %}
+{% load    static %}
+{% block css-head %}
+<link href="{% static 'training/css/select2.css' %}" rel="stylesheet">
+<link href="{% static 'training/css/bootstrap-fileupload.min.css' %}" rel="stylesheet">
+{% endblock css-head %}
+
+{% block content %}
+<header class="page-header">
+    <h2>Category</h2>
+
+    <div class="right-wrapper pull-right">
+        <ol class="breadcrumbs">
+
+        </ol>
+    </div>
+</header>
+<section class="panel">
+    <header class="panel-heading">
+        <div class="panel-actions">
+
+        </div>
+
+        <h2 class="panel-title">Categorys</h2>
+    </header>
+       {% if messages %}
+                {% for message in messages %}
+                <div class="alert
+                {% ifequal message.tags 'success'%}
+                    alert-success
+                {% endifequal %}
+                {% ifequal  message.tags 'info'%}
+                    alert-info
+                {% endifequal %}
+                {% ifequal  message.tags 'error'%}
+                    alert-danger
+                {% endifequal %} ">
+                    <button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+    <form class="form-horizontal form-bordered" enctype="multipart/form-data" id="staff_form" method="post">
+        {% csrf_token %}
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="col-md-3 control-label" for="first_name">Category Name <span
+                        class="required_fields">*</span></label>
+                <div class="col-md-6">
+                    <input class="form-control" value="{{obj_category.name}}" id="first_name" name="name" type="text">
+                </div>
+            </div>
+
+
+
+        </div>
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-sm-9 col-sm-offset-5">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </div>
+        </footer>
+    </form>
+</section>
+{% endblock content %}
+{% block js-foot %}
+<script src="{% static 'training/js/select2.js' %}"></script>
+<script src="{% static 'training/js/bootstrap-fileupload.min.js' %}"></script>
+<script src="{% static 'training/js/jquery.validate.min.js' %}"></script>
+{% endblock js-foot %}
+{% block title %}Category{% endblock %}
+{% block javascript %}
+<script>
+
+    $("#staff_form").validate({
+            rules: {
+                name: {
+                    required:true,
+                    remote:{
+
+                    url: '{% url 'check_category'   %}',
+                    type:'post',
+                    data:
+                    {
+                           id:'{{obj_category.id}}',
+                    },
+
+
+                    },
+
+                }
+
+            },
+            messages: {
+                    name:{
+                    required:"Please enter category name",
+                    remote:"category is already in list!! ",
+                    },
+
+            },
+            highlight: function(element) {
+                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+            },
+            success: function(element) {
+                $(element).closest('.form-group').removeClass('has-error');
+                $(element).remove();
+            },
+            errorPlacement: function( error, element ) {
+                element.parent().append( error );
+            }
+        });
+
+
+</script>
+{% endblock javascript %}

@@ -1,0 +1,6 @@
+.idea/
+*.pyc
+media/
+*api.log*
+*web.log*
+web/*/migrations/

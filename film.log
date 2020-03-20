@@ -1,0 +1,197 @@
+[18/Mar/2020 06:45:46] INFO [film:81] User deleted successfully, User ID is = 1
+[18/Mar/2020 07:15:16] INFO [film:28] admin logged in successfully
+[18/Mar/2020 07:33:18] INFO [film:41] new gk language insert successfully
+[18/Mar/2020 09:34:33] INFO [film:61] User Edit successfully, Language ID is = 5
+[18/Mar/2020 09:34:36] INFO [film:71] Language deleted successfully, Language ID is = 5
+[18/Mar/2020 09:34:38] INFO [film:71] Language deleted successfully, Language ID is = 6
+[18/Mar/2020 10:02:32] ERROR [film:67] ("'DeferredAttribute' object has no attribute 'objects'",)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 56, in edit_language
+    name=Language.name.objects.get(pk=id)
+AttributeError: 'DeferredAttribute' object has no attribute 'objects'
+[18/Mar/2020 10:03:05] ERROR [film:67] ("'DeferredAttribute' object has no attribute 'objects'",)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 56, in edit_language
+    name=Language.name.objects.get(pk=id)
+AttributeError: 'DeferredAttribute' object has no attribute 'objects'
+[18/Mar/2020 10:03:28] ERROR [film:67] ("'DeferredAttribute' object has no attribute 'objects'",)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 56, in edit_language
+    name=Language.name.objects.get(pk=id)
+AttributeError: 'DeferredAttribute' object has no attribute 'objects'
+[18/Mar/2020 10:12:04] INFO [film:64] Language Edit successfully, Language ID is = 4
+[18/Mar/2020 10:12:04] INFO [film:64] Language Edit successfully, Language ID is = 4
+[18/Mar/2020 10:12:04] INFO [film:64] Language Edit successfully, Language ID is = 4
+[18/Mar/2020 10:12:04] INFO [film:64] Language Edit successfully, Language ID is = 3
+[18/Mar/2020 10:12:17] INFO [film:64] Language Edit successfully, Language ID is = 4
+[18/Mar/2020 10:13:51] INFO [film:64] Language Edit successfully, Language ID is = 4
+[18/Mar/2020 10:14:18] INFO [film:74] Language deleted successfully, Language ID is = 4
+[18/Mar/2020 10:14:19] INFO [film:74] Language deleted successfully, Language ID is = 3
+[18/Mar/2020 10:14:31] INFO [film:74] Language deleted successfully, Language ID is = 1
+[18/Mar/2020 10:14:32] INFO [film:74] Language deleted successfully, Language ID is = 2
+[18/Mar/2020 10:14:45] INFO [film:41] new Hindi language insert successfully
+[18/Mar/2020 10:14:49] INFO [film:41] new English language insert successfully
+[18/Mar/2020 10:14:54] INFO [film:41] new German language insert successfully
+[18/Mar/2020 10:16:19] INFO [film:64] Language Edit successfully, Language ID is = 8
+[18/Mar/2020 10:17:01] INFO [film:64] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 10:17:02] INFO [film:64] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 10:17:02] INFO [film:64] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 10:17:03] INFO [film:64] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 10:17:03] INFO [film:64] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 10:17:03] INFO [film:64] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 10:17:03] INFO [film:64] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 10:19:19] INFO [film:64] Language Edit successfully, Language ID is = 9
+[18/Mar/2020 10:19:25] INFO [film:64] Language Edit successfully, Language ID is = 9
+[18/Mar/2020 10:19:33] INFO [film:64] Language Edit successfully, Language ID is = 9
+[18/Mar/2020 10:19:38] INFO [film:64] Language Edit successfully, Language ID is = 9
+[18/Mar/2020 10:30:16] INFO [film:72] Language Edit successfully, Language ID is = 9
+[18/Mar/2020 10:30:19] INFO [film:72] Language Edit successfully, Language ID is = 9
+[18/Mar/2020 10:30:22] INFO [film:72] Language Edit successfully, Language ID is = 9
+[18/Mar/2020 10:30:27] INFO [film:72] Language Edit successfully, Language ID is = 9
+[18/Mar/2020 10:36:15] INFO [film:71] Language Edit successfully, Language ID is = 9
+[18/Mar/2020 11:47:02] INFO [film:71] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 11:49:51] INFO [film:71] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 11:49:53] ERROR [film:97] ('Language matching query does not exist.',)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 92, in check_language
+    status=Language.objects.get(name=lname)
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 415, in get
+    raise self.model.DoesNotExist(
+web.film.models.Language.DoesNotExist: Language matching query does not exist.
+[18/Mar/2020 11:51:05] INFO [film:71] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 11:51:07] ERROR [film:98] ('Language matching query does not exist.',)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 93, in check_language
+    status=Language.objects.get(name=lname)
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 415, in get
+    raise self.model.DoesNotExist(
+web.film.models.Language.DoesNotExist: Language matching query does not exist.
+[18/Mar/2020 11:52:08] INFO [film:71] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 11:52:08] ERROR [film:98] ('Language matching query does not exist.',)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 93, in check_language
+    status=Language.objects.get(name=lname)
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 415, in get
+    raise self.model.DoesNotExist(
+web.film.models.Language.DoesNotExist: Language matching query does not exist.
+[18/Mar/2020 11:55:33] INFO [film:71] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 11:55:37] INFO [film:71] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 11:55:38] ERROR [film:99] ('Language matching query does not exist.',)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 93, in check_language
+    status=Language.objects.get(name=lname)
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 415, in get
+    raise self.model.DoesNotExist(
+web.film.models.Language.DoesNotExist: Language matching query does not exist.
+[18/Mar/2020 11:56:37] INFO [film:71] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 11:56:38] ERROR [film:99] ('Language matching query does not exist.',)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 93, in check_language
+    status=Language.objects.get(name=lname)
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 415, in get
+    raise self.model.DoesNotExist(
+web.film.models.Language.DoesNotExist: Language matching query does not exist.
+[18/Mar/2020 12:06:49] INFO [film:71] Language Edit successfully, Language ID is = 9
+[18/Mar/2020 12:08:21] INFO [film:71] Language Edit successfully, Language ID is = 8
+[18/Mar/2020 12:09:14] INFO [film:71] Language Edit successfully, Language ID is = 8
+[18/Mar/2020 12:12:34] INFO [film:71] Language Edit successfully, Language ID is = 8
+[18/Mar/2020 12:18:08] INFO [film:71] Language Edit successfully, Language ID is = 8
+[18/Mar/2020 12:26:08] INFO [film:71] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 12:34:31] INFO [film:71] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 12:34:32] ERROR [film:101] ('list index out of range',)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 94, in check_language
+    print("status::::::::::::::::",status[1])
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 314, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[18/Mar/2020 12:35:02] INFO [film:71] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 12:35:47] INFO [film:71] Language Edit successfully, Language ID is = 7
+[18/Mar/2020 12:44:15] ERROR [film:101] ('list index out of range',)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 94, in check_language
+    print("status::::::::::::::::",type(status[0]))
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 314, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[18/Mar/2020 12:44:18] ERROR [film:101] ('list index out of range',)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 94, in check_language
+    print("status::::::::::::::::",type(status[0]))
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 314, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[18/Mar/2020 12:44:18] ERROR [film:101] ('list index out of range',)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 94, in check_language
+    print("status::::::::::::::::",type(status[0]))
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 314, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[18/Mar/2020 12:44:18] ERROR [film:101] ('list index out of range',)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 94, in check_language
+    print("status::::::::::::::::",type(status[0]))
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 314, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[18/Mar/2020 12:44:21] ERROR [film:101] ('list index out of range',)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 94, in check_language
+    print("status::::::::::::::::",type(status[0]))
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 314, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[18/Mar/2020 12:44:21] ERROR [film:101] ('list index out of range',)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 94, in check_language
+    print("status::::::::::::::::",type(status[0]))
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 314, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[18/Mar/2020 12:44:21] ERROR [film:101] ('list index out of range',)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 94, in check_language
+    print("status::::::::::::::::",type(status[0]))
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 314, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[18/Mar/2020 12:44:21] ERROR [film:101] ('list index out of range',)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 94, in check_language
+    print("status::::::::::::::::",type(status[0]))
+  File "/home/durgesh.yadav@9series.com/venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 314, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[18/Mar/2020 12:49:31] ERROR [film:105] ("'str' object has no attribute 'makefile'",)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 100, in check_language
+    return HTTPResponse("false")
+  File "/usr/local/lib/python3.8/http/client.py", line 241, in __init__
+    self.fp = sock.makefile("rb")
+AttributeError: 'str' object has no attribute 'makefile'
+[18/Mar/2020 12:49:36] ERROR [film:105] ("'str' object has no attribute 'makefile'",)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 102, in check_language
+    return HTTPResponse("true")
+  File "/usr/local/lib/python3.8/http/client.py", line 241, in __init__
+    self.fp = sock.makefile("rb")
+AttributeError: 'str' object has no attribute 'makefile'
+[18/Mar/2020 12:51:42] ERROR [film:105] ("'str' object has no attribute 'makefile'",)
+Traceback (most recent call last):
+  File "/home/durgesh.yadav@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 100, in check_language
+    return HTTPResponse("false")
+  File "/usr/local/lib/python3.8/http/client.py", line 241, in __init__
+    self.fp = sock.makefile("rb")
+AttributeError: 'str' object has no attribute 'makefile'
+[19/Mar/2020 05:08:14] INFO [film:28] admin logged in successfully

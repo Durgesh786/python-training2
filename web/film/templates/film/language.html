@@ -1,0 +1,111 @@
+{% extends "training/base.html" %}
+{% load    static %}
+{% block css-head %}
+<link href="{% static 'training/css/select2.css' %}" rel="stylesheet">
+<link href="{% static 'training/css/datatables.css' %}" rel="stylesheet">
+{% endblock css-head %}
+
+
+{% block content %}
+<header class="page-header">
+    <h2>Languages</h2>
+
+    <div class="right-wrapper pull-right">
+        <ol class="breadcrumbs">
+
+        </ol>
+    </div>
+</header>
+<section class="panel">
+    <header class="panel-heading">
+
+        <div class="panel-actions">
+
+            <a class="mb-xs mr-xs btn btn-primary" href="{% url 'add_language_list' %}">
+                <i class="fa fa-fw fa-plus" style=""></i>Add Language </a>
+
+
+        </div>
+        <h2 class="panel-title">Language List</h2>
+    </header>
+    <div class="panel-body">
+                  {% if messages %}
+                {% for message in messages %}
+                <div class="alert
+                {% ifequal message.tags 'success'%}
+                    alert-success
+                {% endifequal %}
+                {% ifequal  message.tags 'info'%}
+                    alert-info
+                {% endifequal %}
+                {% ifequal  message.tags 'error'%}
+                    alert-danger
+                {% endifequal %} ">
+                    <button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+        <table class="table table-bordered table-striped mb-none" id="example1">
+            <thead>
+            <tr>
+                <th>Language name</th>
+                <th>Last updated Language</th>
+                <th>Action</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for data in language %}
+            <tr>
+                <td>{{data.name}}</td>
+                <td>{{data.last_update}}</td>
+
+
+                <td class="actions">
+                    <a href="{% url 'language_delete' id=data.id  %}" title="Delete Language"><i class="fa fa-trash-o"
+                                                                                        aria-hidden="true"></i></a>
+
+                    <a href="{% url 'edit_language' id=data.id  %}"  title="Edit Language"><i
+                            class="fa fa-pencil"></i></a>
+                </td>
+            </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+</section>
+{% endblock content %}
+{% block js-foot %}
+<script src="{% static 'training/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'training/js/datatables.js' %}"></script>
+<script src="{% static 'training/js/select2.js' %}"></script>
+{% endblock js-foot %}
+
+{% block javascript %}
+<script>
+
+
+$(document).ready(function(){
+
+
+    $('#example1').DataTable({
+         "pageLength":10,
+         "order": [],
+         columnDefs: [
+            { orderable: false, targets: -1 }
+            ]
+
+    });
+
+
+});
+
+
+
+</script>
+{% endblock javascript %}

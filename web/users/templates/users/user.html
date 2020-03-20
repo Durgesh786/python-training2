@@ -1,0 +1,115 @@
+{% extends "training/base.html" %}
+{% load    static %}
+{% block css-head %}
+<link href="{% static 'training/css/select2.css' %}" rel="stylesheet">
+<link href="{% static 'training/css/bootstrap-fileupload.min.css' %}" rel="stylesheet">
+{% endblock css-head %}
+
+{% block content %}
+<header class="page-header">
+    <h2>Staff</h2>
+
+    <div class="right-wrapper pull-right">
+        <ol class="breadcrumbs">
+
+        </ol>
+    </div>
+</header>
+<section class="panel">
+    <header class="panel-heading">
+        <div class="panel-actions">
+
+        </div>
+
+        <h2 class="panel-title">USers</h2>
+    </header>
+    <form class="form-horizontal form-bordered" enctype="multipart/form-data" id="staff_form" method="post">
+        {% csrf_token %}
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="col-md-3 control-label" for="first_name">First Name <span
+                        class="required_fields">*</span></label>
+                <div class="col-md-6">
+                    <input class="form-control" id="first_name" name="first_name" type="text">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label" for="first_name">Select<span
+                        class="required_fields">*</span></label>
+                <div class="col-md-6">
+                    <select class="form-control populate select2-offscreen" data-plugin-selecttwo="" id="network"
+                            name="network">
+
+                        <option selected value="1">val 1</option>
+                        <option value="2">val 2</option>
+
+                    </select>
+                </div>
+            </div>
+
+
+        </div>
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-sm-9 col-sm-offset-5">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </div>
+        </footer>
+    </form>
+</section>
+{% endblock content %}
+{% block js-foot %}
+<script src="{% static 'training/js/select2.js' %}"></script>
+<script src="{% static 'training/js/bootstrap-fileupload.min.js' %}"></script>
+<script src="{% static 'training/js/jquery.validate.min.js' %}"></script>
+{% endblock js-foot %}
+{% block title %}Staff{% endblock %}
+{% block javascript %}
+<script>
+
+    $("#staff_form").validate({
+            rules: {
+                first_name: {
+                    required:true,
+                }
+
+            },
+            messages: {
+                first_name:{
+                    required:"Please enter first name",
+                }
+
+            },
+            highlight: function(element) {
+                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+            },
+            success: function(element) {
+                $(element).closest('.form-group').removeClass('has-error');
+                $(element).remove();
+            },
+            errorPlacement: function( error, element ) {
+                element.parent().append( error );
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+{% endblock javascript %}

@@ -1,0 +1,270 @@
+{% load    static %}
+<!doctype html>
+<html class="fixed" lang="en">
+<head>
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <title>{% block title %}{% endblock %}</title>
+    <meta content="training Admin" name="keywords"/>
+    <meta content="training" name="description">
+    <meta content="9series Pvt Ltd." name="author">
+
+    <!-- Mobile Metas -->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light"
+          rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link href="{% static 'training/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'training/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'training/css/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'training/css/datepicker3.css' %}" rel="stylesheet">
+    <!-- Specific Page Vendor CSS -->
+    <link href="{% static 'training/css/jquery-ui-1.10.4.custom.min.css' %}" rel="stylesheet">
+    <link href="{% static 'training/css/bootstrap-multiselect.css' %}" rel="stylesheet">
+    <link href="{% static 'training/css/morris.css' %}" rel="stylesheet">
+
+    {% block css-head %} {% endblock css-head %}
+    <!-- Theme CSS -->
+    <link href="{% static 'training/css/theme.css' %}" rel="stylesheet">
+    <link href="{% static 'training/images/favicon.ico' type='image/x-icon' %}" rel="shortcut icon">
+
+    <!-- Skin CSS -->
+    <link href="{% static 'training/css/default.css' %}" rel="stylesheet">
+
+    <!-- Theme Custom CSS -->
+    <link href="{% static 'training/css/theme-custom.css' %}" rel="stylesheet">
+
+    {% block css-style %} {% endblock css-style %}
+    <!-- Head Libs -->
+    <script src="{% static 'training/js/modernizr.js' %}"></script>
+</head>
+<body>
+<div class="loader_anim"></div>
+<section class="body">
+    <!-- start: header -->
+    <header class="header">
+        <div class="logo-container">
+            <!--<a class="logo" href="../">-->
+
+            <a class="logo" href="#">
+                <img alt="JSOFT Admin" height="45" src="{% static 'training/images/logo.svg' %}"/>
+            </a>
+
+            <div class="visible-xs toggle-sidebar-left" data-fire-event="sidebar-left-opened" data-target="html"
+                 data-toggle-class="sidebar-left-opened">
+                <i aria-label="Toggle sidebar" class="fa fa-bars"></i>
+            </div>
+        </div>
+
+        <!-- start: search & user box -->
+        <div class="header-right">
+
+
+            <ul class="notifications">
+                <li id="notify_container">
+
+                </li>
+            </ul>
+
+
+            <span class="separator"></span>
+            <div class="userbox" id="userbox">
+                <a data-toggle="dropdown" href="#">
+
+                    <div class="profile-info" data-lock-email="{{ request.user.email }}"
+                         data-lock-name="{{ request.user.username }}">
+                        <span class="name">{{request.user.username}}</span>
+                        <span class="role">Administrator</span>
+
+                    </div>
+
+                    <i class="fa custom-caret"></i>
+                </a>
+
+                <div class="dropdown-menu">
+                    <ul class="list-unstyled">
+                        <li class="divider"></li>
+                        <li>
+
+                            <a href="#" role="menuitem" tabindex="-1"><i
+                                    class="fa fa-user"></i>My Profile</a>
+
+                        </li>
+                        <li>
+
+                            <a href="{% url 'logout' %}" role="menuitem" tabindex="-1"><i
+                                    class="fa fa-power-off"></i>
+                                Logout</a>
+
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end: search & user box -->
+    </header>
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+        <!-- start: sidebar -->
+        <aside class="sidebar-left" id="sidebar-left">
+
+            <div class="sidebar-header">
+                <div class="sidebar-title">
+
+                </div>
+                <div class="sidebar-toggle hidden-xs" data-fire-event="sidebar-left-toggle" data-target="html"
+                     data-toggle-class="sidebar-left-collapsed">
+                    <i aria-label="Toggle sidebar" class="fa fa-bars"></i>
+                </div>
+            </div>
+            <div class="nano">
+                <div class="nano-content">
+                    <nav class="nav-main" id="menu" role="navigation">
+                        <ul class="nav nav-main">
+
+
+                            <li class="{% if request.resolver_match.url_name == 'dashboard' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'dashboard' %}">
+                                    <i aria-hidden="true" class="fa fa-home"></i>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="{% if request.resolver_match.url_name == 'user_list' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'user_list' %}">
+                                    <i aria-hidden="true" class="fa fa-user"></i>
+                                    <span>Users</span>
+                                </a>
+                            </li>
+                             <li class="{% if request.resolver_match.url_name == 'user_list' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'language_list' %}">
+                                    <i aria-hidden="true" class="fa fa-user"></i>
+                                    <span>Language</span>
+                                </a>
+                            </li>
+                             <li class="{% if request.resolver_match.url_name == 'user_list' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'user_list' %}">
+                                    <i aria-hidden="true" class="fa fa-user"></i>
+                                    <span>Category</span>
+                                </a>
+                            </li>
+                            <li class="{% if request.resolver_match.url_name == 'user_list' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'user_list' %}">
+                                    <i aria-hidden="true" class="fa fa-user"></i>
+                                    <span>Film</span>
+                                </a>
+                            </li>
+                            <li class="{% if request.resolver_match.url_name == 'user_list' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'user_list' %}">
+                                    <i aria-hidden="true" class="fa fa-user"></i>
+                                    <span>FilmCategory</span>
+                                </a>
+                            </li>
+                             <li class="{% if request.resolver_match.url_name == 'user_list' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'actor_list' %}">
+                                    <i aria-hidden="true" class="fa fa-user"></i>
+                                    <span>Actor</span>
+                                </a>
+                            </li>
+                            <li class="{% if request.resolver_match.url_name == 'user_list' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'user_list' %}">
+                                    <i aria-hidden="true" class="fa fa-user"></i>
+                                    <span>FilmActor</span>
+                                </a>
+                            </li>
+                            <li class="{% if request.resolver_match.url_name == 'user_list' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'user_list' %}">
+                                    <i aria-hidden="true" class="fa fa-user"></i>
+                                    <span>Payment</span>
+                                </a>
+                            </li>
+                            <li class="{% if request.resolver_match.url_name == 'user_list' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'user_list' %}">
+                                    <i aria-hidden="true" class="fa fa-user"></i>
+                                    <span>Rental</span>
+                                </a>
+                            </li>
+                            <li class="{% if request.resolver_match.url_name == 'user_list' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'user_list' %}">
+                                    <i aria-hidden="true" class="fa fa-user"></i>
+                                    <span>Inventory</span>
+                                </a>
+                            </li>
+                               <li class="{% if request.resolver_match.url_name == 'user_list' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'user_list' %}">
+                                    <i aria-hidden="true" class="fa fa-user"></i>
+                                    <span>Store</span>
+                                </a>
+                            </li>
+                            </li>
+                               <li class="{% if request.resolver_match.url_name == 'user_list' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'user_list' %}">
+                                    <i aria-hidden="true" class="fa fa-user"></i>
+                                    <span>Address</span>
+                                </a>
+                            </li>
+                            </li>
+                               <li class="{% if request.resolver_match.url_name == 'user_list' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'user_list' %}">
+                                    <i aria-hidden="true" class="fa fa-user"></i>
+                                    <span>City</span>
+                                </a>
+                            </li>
+                             </li>
+                               <li class="{% if request.resolver_match.url_name == 'user_list' %}{{ 'nav-active' }} {% endif %}">
+                                <a href="{% url 'user_list' %}">
+                                    <i aria-hidden="true" class="fa fa-user"></i>
+                                    <span>Country</span>
+                                </a>
+                            </li>
+
+
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+        <!-- end: sidebar -->
+
+        <section class="content-body" role="main">
+            {% block content %}{% endblock content %}
+        </section>
+    </div>
+
+</section>
+
+<!-- Vendor -->
+<script src="{% static 'training/js/jquery.min.js' %}"></script>
+<script src="{% static 'training/js/jquery.browser.mobile.js' %}"></script>
+
+<script src="{% static 'training/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'training/js/nanoscroller.js' %}"></script>
+<script src="{% static 'training/js/bootstrap-datepicker.js' %}"></script>
+<script src="{% static 'training/js/magnific-popup.js' %}"></script>
+<script src="{% static 'training/js/jquery.placeholder.js' %}"></script>
+
+<!-- Specific Page Vendor -->
+<script src="{% static 'training/js/jquery-ui-1.10.4.custom.min.js' %}"></script>
+<script src="{% static 'training/js/bootstrap-multiselect.js' %}"></script>
+
+{% block js-foot %} {% endblock js-foot %}
+<!-- Theme Base, Components and Settings -->
+<script src="{% static 'training/js/theme.js' %}"></script>
+
+<!-- Theme Custom -->
+<script src="{% static 'training/js/theme.custom.js' %}"></script>
+
+<!-- Theme Initialization Files -->
+<script src="{% static 'training/js/theme.init.js' %}"></script>
+
+
+{% block javascript %} {% endblock javascript %}
+</body>
+</html>

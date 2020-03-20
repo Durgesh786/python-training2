@@ -1,0 +1,170 @@
+{% load    static %}
+<!doctype html>
+<html class="fixed">
+<head>
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <meta content="HTML5 Admin Template" name="keywords"/>
+    <meta content="Porto Admin - Responsive HTML5 Template" name="description">
+    <meta content="okler.net" name="author">
+    <title>Login</title>
+    <!-- Mobile Metas -->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light"
+          rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link href="{% static 'training/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'training/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'training/images/favicon.ico' type='image/x-icon' %}" rel="shortcut icon">
+    <!-- Theme CSS -->
+    <link href="{% static 'training/css/theme.css' %}" rel="stylesheet">
+
+    <!-- Skin CSS -->
+    <link href="{% static 'training/css/default.css' %}" rel="stylesheet">
+
+
+</head>
+<body>
+<!-- start: page -->
+<section class="body-sign">
+    <div class="center-sign">
+        <a class="logo pull-left" href="/">
+            <img alt="Porto Admin" height="54" src="{% static 'training/images/logo.svg' %}"/>
+        </a>
+
+        <div class="panel panel-sign">
+            <div class="panel-title-sign mt-xl text-right">
+                <h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> Sign In</h2>
+            </div>
+            <div class="panel-body">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert
+                {% ifequal message.tags 'success'%}
+                    alert-success
+                {% endifequal %}
+                {% ifequal  message.tags 'info'%}
+                    alert-info
+                {% endifequal %}
+                {% ifequal  message.tags 'error'%}
+                    alert-danger
+                {% endifequal %} ">
+                    <button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                <form id="loginform" method="post">
+                    {% csrf_token %}
+                    <div class="form-group mb-lg">
+                        <label class="pull-left">Username</label>
+                        <div class="input-group input-group-icon">
+                            <input class="form-control input-lg" name="username" placeholder="Email" required
+                                   type="text"/>
+                            <span class="input-group-addon">
+										<span class="icon icon-lg">
+											<i class="fa fa-user"></i>
+										</span>
+									</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-lg">
+                        <div class="clearfix">
+                            <label class="pull-left">Password</label>
+                        </div>
+
+                        <div class="input-group input-group-icon">
+                            <input class="form-control input-lg" name="password" placeholder="Password" required
+                                   type="password"/>
+                            <span class="input-group-addon">
+										<span class="icon icon-lg">
+											<i class="fa fa-lock"></i>
+										</span>
+									</span>
+                        </div>
+                        <div class="clearfix">
+                            <a class="pull-right" href="javascript:void(0);">Lost Password?</a>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="checkbox-custom checkbox-default">
+
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            <button class="btn btn-primary hidden-xs" type="submit">Sign In</button>
+                            <button class="btn btn-primary btn-block btn-lg visible-xs mt-lg" type="submit">Sign In
+                            </button>
+                        </div>
+                    </div>
+                    <span class="mt-lg mb-lg line-thru text-center text-uppercase">
+                        <span>or</span>
+                    </span>
+
+                    <p class="text-center">Don't have an account yet? <a href="javascript:void(0);">Sign Up!</a>
+
+                </form>
+            </div>
+        </div>
+
+        <p class="text-center text-muted mt-md mb-md">&copy; Copyright {% now 'Y' %}. All rights reserved.</p>
+    </div>
+</section>
+<!-- end: page -->
+
+<!-- Vendor -->
+<script src="{% static 'training/js/jquery.min.js' %}"></script>
+<script src="{% static 'training/js/jquery.browser.mobile.js' %}"></script>
+<script src="{% static 'training/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'training/js/jquery.validate.min.js' %}"></script>
+
+<script>
+	$("#loginform").validate({
+	    rules: {
+        username:{
+            required:true
+        },
+        password: "required",
+
+        },
+        messages: {
+        username:{
+            required:"Please enter username"
+        },
+            password: "Please enter your password",
+        },
+		highlight: function(element) {
+            $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+        },
+        success: function(element) {
+            $(element).closest('.form-group').removeClass('has-error');
+            $(element).remove();
+        },
+        errorPlacement: function( error, element ) {
+            element.parent().parent().append( error );
+        }
+	});
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
